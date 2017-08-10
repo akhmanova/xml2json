@@ -2,11 +2,11 @@
 #include <sstream>
 #include <fstream>
 
-#include "xml2json.hpp"
+#include "/home/elina/Documents/xml/xml2json.hpp"
 
 using namespace std;
 
-auto convert( const istream &input ) -> void
+void convert( const istream &input )
 {
     ostringstream oss;
     oss << input.rdbuf();
@@ -15,13 +15,14 @@ auto convert( const istream &input ) -> void
     cout << json_str << endl;
 }
 
-auto main( const int argc, const char *const argv[] ) -> int
+int main( const int argc, const char *const argv[] ) 
 {
+    
     switch ( argc ) {
-        case 1: convert( cin );
+        case 1: convert(cin);
                 break;
         case 2: convert( ifstream( argv[1] ));
                 break;
-        default: exit( EXIT_FAILURE );
+        default: cout << "HELLO";
     }
 }
